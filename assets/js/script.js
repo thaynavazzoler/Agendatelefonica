@@ -11,6 +11,41 @@ class Agenda{
         this.instagram = instagram;
         this.github = github;
         this.idade = this.calculateAge(datanascimento);
+        this.ZodiacSign = this.getZodiacSign();
+        
+    }
+    
+    getZodiacSign() {
+        let datanascimento = new Date(this.datanascimento);
+        let day = datanascimento.getDate();
+        let month = datanascimento.getMonth() + 1;
+        console.log("Passou pelo getSigno() da class User");
+    
+        if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
+            return "Capricórnio ♑";
+        } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+            return "Aquário ♒";
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+            return "Peixes ♓";
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+            return "Áries ♈";
+        } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+            return "Touro ♉";
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+            return "Gêmeos ♊";
+        } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+            return "Câncer ♋";
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+            return "Leão ♌";
+        } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+            return "Virgem ♍";
+        } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+            return "Libra ♎";
+        } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+            return "Escorpião ♏";
+        } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+            return "Sagitário ♐";
+        }
     }
     calculateAge(datanascimento) {
         const  nascimento = new Date (datanascimento).getFullYear();
@@ -103,7 +138,7 @@ function comporAgenda(){
     let github = document.getElementById("input-git").value;
 
     const agenda = new Agenda(nome, telefonefixo, telefonecel, foto, datanascimento, email, cep, cidade, instagram, github);
-console.log(datanascimento)
+console.log(agenda)
 
     console.log(agenda);
     bibliotecaAgenda.adicionar(agenda);
@@ -152,23 +187,20 @@ function renderizarConteudo() {
 
     array.forEach(agenda => {
         const agendaDiv = `
-        <div class='contatoDetalhe'>
+        <div class='contatoDetalhe' onclick="comportudo()">
         <p>nome: ${agenda.nome}</p>
-        <p>telefonefixo: ${agenda.telefonefixo}</p>
-        <p>telefonecel: ${agenda.telefonecel}</p>
+        <p>telefone fixo: ${agenda.telefonefixo}</p>
+        <p>telefone celular: ${agenda.telefonecel}</p>
         <img src="${agenda.foto}"alt="${agenda.nome}">
-        <p>datanascimento: ${dateinPTBR(agenda.datanascimento)}</p>
-        <p>telefonefixo: ${agenda.email}</p>
-        <p>telefonefixo: ${agenda.cep}</p>
-        <p>telefonefixo: ${agenda.cidade}</p>
-        <p>telefonefixo: ${agenda.instagram}</p>
-        <p>telefonefixo: ${agenda.github}</p>
+
+
    
         </div>
         `
         listaHTML.innerHTML += agendaDiv;
     });
-}
+}       /* <p> Idade : ${agenda.idade} mês: ${agenda.mes}.</p>
+<p> Signo: ${agenda.getZodiacSign}</p>*/
 
 function isURLValida(foto) {
     if(foto.match(/\.(jpeg|jpg|gif|png)$/) != null){
@@ -178,19 +210,23 @@ function isURLValida(foto) {
     }
 }
 
-function exibe(){
-    if(bibliotecaAgenda.listaAgendaArray.length < 1){
-        envieMsg("não contém cadastro feito")
-    }else{
-        document.getElementById("container-result").style.display = "block";
-        document.getElementById("div-inputs").style.display = "none";
-        renderizarConteudo()
-    }
+
+function comportudo(){
+    let result = '';
+
+result =`
+    <div>
+    <p>nome: ${this.nome}</p>
+    <p>telefone fixo: ${agenda.telefonefixo}</p>
+    <p>telefone celular: ${agenda.telefonecel}</p>
+    <img src="${agenda.foto}"alt="${agenda.nome}">
+    <p>Nascimento: ${agenda.datanascimento}</p>
+    <p>email: ${agenda.email}</p>
+    <p>cep: ${agenda.cep}</p>
+    <p>cidade: ${agenda.cidade}</p>
+    <p>instagram: ${agenda.instagram}</p>
+    <p>Github: ${agenda.github}</p>
+    </div>
+    `
+    document.getElementById("container-lista").innerHTML = result;
 }
-function backRegister(){
-    document.getElementById("container-result").style.display = "none";
-    document.getElementById("div-inputs").style.display = "block";
-}
-
-
-
