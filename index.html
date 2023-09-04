@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Agenda Telefônica</h1>
+    <div id="div-inputs">
+        
+    <label class="label" for="input-nome">Nome completo: </label>
+    <input type="text" id="input-nome" name="input-nome" class="input-nome">
+
+    <label class="label"  for="input-telefonefixo">Telefone fixo:</label>
+    <input type="number" id="input-telefonefixo" name="input-telefonefixo" class="input-telefonefixo">
+
+    <label class="label" for="input-telefonecel">Telefone Celular:</label>
+    <input type="number" id="input-telefonecel" name="input-telefonecel" class="input-telefonecel">
+
+    <label class="label" for="input-URL">URL da foto:</label>
+    <input type="text" id="input-URL" name="input-URL" class="input-URL">
+
+  
+    <input type="date" id="input-nascimento" name="input-nascimento" class="input-nascimento">
+
+    <label class="label" for="input-email">E-mail:</label>
+    <input type="text" id="input-email" name="input-email" class="input-email">
+
+    <label class="label" for="input-cep">CEP:</label>
+    <input type="number" id="input-cep" name="input-cep" class="input-cep">
+
+    <label class="label" for="input-cidade">Cidade:</label>
+    <input type="text" id="input-cidade" name="input-cidade" class="input-cidade">
+
+    <label class="label" for="input-instagram">@instagram</label>
+    <input type="text" id="input-instagram" name="input-instagram" class="input-instagram">
+
+    <label class="label" for="input-Git">@Github</label>
+    <input type="text" id="input-git" name="input-git" class="input-git">
+
+
+    <div id="msg"></div>
+    <button id="botao-CriarCadastro" class="button" onclick="adicionarContato()">Adicionar Contato</button>
+
+    <div id="container-result">
+        <div id="container-lista">
+        </div>
+    </div>
+</div>
 </body>
 </html>
