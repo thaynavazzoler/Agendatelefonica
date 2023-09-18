@@ -30,7 +30,7 @@
                 <mxCell id="15" value="-this.contatos: []" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="500" y="160" width="170" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="+adicionarContato: void&lt;br&gt;+&amp;nbsp;listarContatos: List&lt;br&gt;+&amp;nbsp;getContactById(id): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="16" value="&lt;span style=&quot;background-color: initial;&quot;&gt;+addContact: void&lt;/span&gt;&lt;br&gt;+&amp;nbsp;listarContatos: List&lt;br&gt;+&amp;nbsp;getContactById(id): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="490" y="250" width="230" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="Contato" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
