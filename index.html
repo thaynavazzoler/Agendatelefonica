@@ -1,54 +1,91 @@
-<!DOCTYPE html>
-<html lang="PT-br">
+<html lang="en">
 <head>
-    <script src="./assets/js/script.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+     <script src="./assets/js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agenda telefone </title>
 </head>
 <body>
+    <main id="body">
+        <article id="the-form">
+            <div id="title">
+                <h1>Agenda Telefônica</h1>
+            </div>
+            <div id="form">
+            <div id="d1">
 
-    <h1>Agenda Telefônica</h1>
-    <div id="div-inputs">
-        
-    <label class="label" for="input-nome">Nome completo: </label>
-    <input type="text" id="input-nome" name="input-nome" class="input-nome">
+                <div>
+                <input type="text" name="name" id="name" placeholder="Digite o nome" required>
+                </div>
 
-    <label class="label"  for="input-telefonefixo">Telefone fixo:</label>
-    <input type="number" id="input-telefonefixo" name="input-telefonefixo" class="input-telefonefixo">
+                <div>
+                <input type="text" name="phone" id="phone" placeholder="Digite o telefone" maxlength="11" required>
+                </div>
 
-    <label class="label" for="input-telefonecel">Telefone Celular:</label>
-    <input type="number" id="input-telefonecel" name="input-telefonecel" class="input-telefonecel">
+            </div>
+            <div id="d2">
 
-    <label class="label" for="input-URL">URL da foto:</label>
-    <input type="text" id="input-URL" name="input-URL" class="input-URL">
+                <div>
+                <input type="text" name="cell" id="cell" placeholder="Digite o celular" maxlength="11" required>
+                </div>
 
-  
-    <input type="date" id="input-nascimento" name="input-nascimento" class="input-nascimento">
+                <div>
+                <input type="text" name="foto" id="foto" placeholder="URL da foto" required>
+                </div>
+               
+            </div>
 
-    <label class="label" for="input-email">E-mail:</label>
-    <input type="text" id="input-email" name="input-email" class="input-email">
+            <div id="d3" >
 
-    <label class="label" for="input-cep">CEP:</label>
-    <input type="number" id="input-cep" name="input-cep" class="input-cep">
+                <div>
+                <input type="date" name="birthdate" id="birthdate" placeholder="Data de Nascimento" required>
+                </div>
 
-    <label class="label" for="input-cidade">Cidade:</label>
-    <input type="text" id="input-cidade" name="input-cidade" class="input-cidade">
+                <div>
+                <input type="email" name="email" id="email" placeholder="Digite o e-mail" required>
+                </div>
 
-    <label class="label" for="input-instagram">@instagram</label>
-    <input type="text" id="input-instagram" name="input-instagram" class="input-instagram">
+            </div>
+           
+                <div id="d4">
 
-    <label class="label" for="input-Git">@Github</label>
-    <input type="text" id="input-git" name="input-git" class="input-git">
+                <div>
+                <input type="text" name="cep" id="cep" placeholder="CEP" maxlength="8" required>
+                </div>
+
+                <div>
+                <input type="text" name="cidade" id="cidade" placeholder="digite a cidade" required>
+                </div>
+
+            </div>
+            <div id="d5">
+
+                <div>
+                <input type="text" name="instagram" id="instagram" placeholder="Digite o instagram" required>
+                </div>
+
+                <div>
+                <input type="text" name="gitHub" id="gitHub" placeholder="Digite o GitHub" required>
+                </div>
+
+            </div>
+       
+                <button onclick="addContact()">Adicionar Contato</button>
+
+                <div id="error-msg"></div>
+
+            </div>
+            <div id="show-contact-list"></div>
+        </article>
+        <article id="contact-details">
 
 
-    <div id="msg"></div>
-    <button id="botao-CriarAgenda" class="button" onclick="comporAgenda()">Adicionar Contato</button>
+        </article>
 
-    <div id="container-result">
-        <div id="container-lista"></div>
-    </div>
-</div>
+    </main>
+</body>
 </body>
 </html>
+
+
